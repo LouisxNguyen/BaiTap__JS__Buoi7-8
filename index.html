@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="input-group mb-3 input-group__1">
+            <input type="number" class="form-control" placeholder="Nhập vào một số" aria-label="Recipient's username"
+                aria-describedby="button-addon2" id="inputNumber">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" id="addNumber">Thêm số</button>
+            </div>
+        </div>
+        <p>Mảng hiện tại: <span id="inMang"></span></p>
+
+        <!-- Xử lý function -->
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="pills-home-tab" data-toggle="pill" data-target="#func1"
+                    type="button" role="tab" aria-controls="func1" aria-selected="true">Tổng số dương</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-profile-tab" data-toggle="pill" data-target="#func2" type="button"
+                    role="tab" aria-controls="func2" aria-selected="false">Đếm số dương</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-contact-tab" data-toggle="pill" data-target="#func3" type="button"
+                    role="tab" aria-controls="func3" aria-selected="false">Tìm số nhỏ nhất</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-contact-tab" data-toggle="pill" data-target="#func4" type="button"
+                    role="tab" aria-controls="func4" aria-selected="false">Tìm dương nhỏ nhất</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-contact-tab" data-toggle="pill" data-target="#func5" type="button"
+                    role="tab" aria-controls="func5" aria-selected="false">Tìm dương cuối cùng</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-contact-tab" data-toggle="pill" data-target="#func6" type="button"
+                    role="tab" aria-controls="func6" aria-selected="false">Đổi vị trí</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+            <!-- FUNCtion1 -->
+            <div class="tab-pane fade show active" id="func1" role="tabpanel" aria-labelledby="pills-home-tab">
+                <p class="alert alert-success">Tổng các số dương của mảng: <span id="tongDuong"></span></p>
+                <button class="btn btn-success" id="btnTongDuong">Tính tổng</button>
+
+            </div>
+            <!-- FUNCtion2 -->
+            <div class="tab-pane fade" id="func2" role="tabpanel" aria-labelledby="pills-profile-tab">
+                <p class="alert alert-success">Số dương của mảng: <span id="demSoDuong"></span></p>
+                <button class="btn btn-success" id="btnDemSoDuong">Đếm số dương</button>
+            </div>
+            <!-- FUNCtion3 -->
+            <div class="tab-pane fade" id="func3" role="tabpanel" aria-labelledby="pills-contact-tab">
+                <p class="alert alert-success">Số nhỏ nhất của mảng: <span id="soNhoNhat"></span></p>
+                <button class="btn btn-success" id="btnSoNhoNhat">Tìm số</button>
+            </div>
+            <!-- FUNCtion4 -->
+            <div class="tab-pane fade" id="func4" role="tabpanel" aria-labelledby="pills-contact-tab">
+                <p class="alert alert-success">Số dương nhỏ nhất của mảng: <span id="soDuongNhoNhat"></span></p>
+                <button class="btn btn-success" id="btnDuongNhoNhat">Tìm số</button>
+            </div>
+            <!-- FUNCtion5 -->
+            <div class="tab-pane fade" id="func5" role="tabpanel" aria-labelledby="pills-contact-tab">
+                <p class="alert alert-success">Số dương cuối của mảng: <span id="soDuongCuoi"></span></p>
+                <button class="btn btn-success" id="btnDuongCuoi">Tìm số</button>
+            </div>
+            <!-- FUNCtion6 -->
+            <div class="tab-pane fade" id="func6" role="tabpanel" aria-labelledby="pills-contact-tab">
+                <form class="formDoiCho">
+                    <div class="row">
+                        <div class="col">
+                            <input id="doiCho1" type="number" class="form-control"
+                                placeholder="Vị trí số cần đổi thứ nhất">
+                        </div>
+                        <div class="col">
+                            <input id="doiCho2" type="number" class="form-control"
+                                placeholder="Vị trí số cần đổi thứ hai">
+                        </div>
+                    </div>
+                </form>
+                <p class="alert alert-success">Mảng sau khi đổi vị trí: <span id="doiCho"></span></p>
+                <button class="btn btn-success" id="btnDoicho">Đổi vị trí</button>
+            </div>
+        </div>
+
+        <!-- Function part2 -->
+
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="pills-home-tab1" data-toggle="pill" data-target="#func8"
+                    type="button" role="tab" aria-controls="func8" aria-selected="true">Tìm số nguyên tố đầu
+                    tiên</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-profile-tab1" data-toggle="pill" data-target="#func7" type="button"
+                    role="tab" aria-controls="pills-profile" aria-selected="false">Sắp xếp mảng tăng dần</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-contact-tab1" data-toggle="pill" data-target="#func10" type="button"
+                    role="tab" aria-controls="pills-contact" aria-selected="false">So sánh lượng số dương và âm</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-contact-tab1" data-toggle="pill" data-target="#func9" type="button"
+                    role="tab" aria-controls="pills-contact" aria-selected="false">Tìm số nguyên trong mảng thực</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+            <!-- FUNCtion8 -->
+            <div class="tab-pane fade show active" id="func8" role="tabpanel" aria-labelledby="pills-home-tab1">
+                <p class="alert alert-success">Số nguyên tố đầu tiên: <span id="soNTdau"></span></p>
+                <button class="btn btn-success" id="btnNguyenToDau">Tìm số</button>
+            </div>
+            <!-- FUNCtion7 -->
+            <div class="tab-pane fade" id="func7" role="tabpanel" aria-labelledby="pills-profile-tab1">
+                <p class="alert alert-success">Mảng đã sắp xếp tăng dần: <span id="sapXepMang"></span></p>
+                <button class="btn btn-success" id="btnSapXep">Sắp xếp mảng</button>
+            </div>
+            <!-- FUNCtion9 -->
+            <div class="tab-pane fade" id="func9" role="tabpanel" aria-labelledby="pills-contact-tab1">
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control" placeholder="Nhập vào một số" aria-label="Recipient's username"
+                        aria-describedby="button-addon2" id="inputNumber_2">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" id="addNumber_2">Thêm số</button>
+                    </div>
+                </div>
+                <p>Mảng hiện tại: <span id="inMang_2"></span></p>
+                <p class="alert alert-success">Số Nguyên trong mảng: <span id="timSoNguyen"></span></p>
+                <button class="btn btn-success" id="btnSoNguyen">Tìm số</button>
+            </div>
+            <!-- FUNCtion10 -->
+            <div class="tab-pane fade" id="func10" role="tabpanel" aria-labelledby="pills-contact-tab1">
+                <p class="alert alert-success">So sánh lượng số dương và âm: <span id="soSanh"></span> <br> <span
+                        id="inSoSoSanh"></span></p>
+                <button class="btn btn-success" id="btnSoSanh">So sánh</button>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+    <!-- Main JS -->
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
